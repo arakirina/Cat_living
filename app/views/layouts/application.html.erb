@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    
+
     <title>ねこ、暮らし。</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -28,7 +28,7 @@
               <% if signed_in? %>
                <li><%= link_to ' マイページ',root_path,class: 'fas fa-user nav-link text-dark' %></li>
                <li><%= link_to ' ログアウト',destroy_user_session_path, method: :delete , class: 'fas fa-sign-out-alt nav-link text-dark' %></li>
-               <li><%= link_to ' 新規投稿',root_path,class: 'fas fa-pencil-alt nav-link text-dark' %></li>
+               <li><%= link_to ' 新規投稿',new_post_path,class: 'fas fa-pencil-alt nav-link text-dark' %></li>
               <% else %>
                <li><%= link_to ' About',about_path,class: 'fas fa-paperclip nav-link text-dark' %></li>
                <li><%= link_to ' 新規登録',new_user_registration_path , class: 'fas fa-user-plus nav-link text-dark' %></li>
