@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>CatLiving</title>
+    
+    <title>ねこ、暮らし。</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -12,11 +13,36 @@
   </head>
 
   <body>
+
     <header>
-      
+
+      <nav class="navbar navbar-expand-lg navbar-light shadow-sm p-2 mb-3 bg-white rounded p-20">
+        <div class="container">
+          <i class="fas fa-paw"></i>
+          <a class="logo" href="/"><%= image_tag 'header-logo.jpeg', size: '200x80' %></a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav ml-auto">
+              <% if signed_in? %>
+               <li><%= link_to ' マイページ',root_path,class: 'fas fa-user nav-link text-dark' %></li>
+               <li><%= link_to ' ログアウト',destroy_user_session_path, method: :delete , class: 'fas fa-sign-out-alt nav-link text-dark' %></li>
+               <li><%= link_to ' 新規投稿',root_path,class: 'fas fa-pencil-alt nav-link text-dark' %></li>
+              <% else %>
+               <li><%= link_to ' About',about_path,class: 'fas fa-paperclip nav-link text-dark' %></li>
+               <li><%= link_to ' 新規登録',new_user_registration_path , class: 'fas fa-user-plus nav-link text-dark' %></li>
+               <li><%= link_to ' ログイン',new_user_session_path , class: 'fas fa-sign-in-alt nav-link text-dark' %></li>
+              <% end %>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
     </header>
 
     <%= yield %>
 
   </body>
+
 </html>

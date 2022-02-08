@@ -1,5 +1,5 @@
 <div class="container m-5">
-  <h5 class='row mt-4 ml-5'><i class="bi bi-check mr-2"></i>パスワードを変更</h5><br>
+  <h5 class='row mt-4 ml-5'><i class="bi bi-check mr-2"></i>パスワードを変更する</h5><br>
 
   <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
    <%= render "devise/shared/error_messages", resource: resource %>
