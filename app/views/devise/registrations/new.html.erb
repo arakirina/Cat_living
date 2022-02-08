@@ -1,5 +1,5 @@
 <div class="container m-5">
-  <h5 class='row mt-4 ml-5'><i class="bi bi-person-fill mr-3"></i> 新規登録</h5><br>
+  <h5 class='row mt-4 ml-5'><i class="bi bi-person-fill mr-3"></i>新規登録</h5><br>
 
    <%= form_with model: @user, url: user_registration_path, local: true do |f| %>
     <%= render "devise/shared/error_messages", resource: resource %>
