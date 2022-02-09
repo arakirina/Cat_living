@@ -13,10 +13,12 @@
  *= require_tree .
  *= require_self
  */
- 
+
  @import "bootstrap";
  @import 'font-awesome-sprockets';
  @import 'font-awesome';
- 
 
+*{
+ font-family:"Zen Kaku Gothic New";
+}
 

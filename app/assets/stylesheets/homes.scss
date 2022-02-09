@@ -1,3 +1,33 @@
 // Place all the styles related to the homes controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+.main{
+  display: flex;
+  justify-content: center;
+  margin-top:40px;
+  position:relative;
+}
+
+.sidebar{
+  width:350px;
+  height:400px;
+  border: solid 1px #696969;
+  margin-top:50px;
+  margin-right:30px;
+  border-radius: 8px;
+}
+
+.posts{
+  width:700px;
+  height:700px;
+  margin-top:50px;
+  border: double 3px #696969;
+  border-radius: 8px;
+}
