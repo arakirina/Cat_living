@@ -1,19 +1,34 @@
 <div class="container">
+
+  <div class="error-text pt-4">
+   <% if @post.errors.any? %>
+    もう一度入力して下さい。
+   <% end %>
+  </div>
+
   <div class="row border-bottom mt-5">
    <strong class="mb-3">新規ぽすと</strong>
   </div>
   <%= form_with model: @post, local:true do |f| %>
-   <div class="row pt-3">
-     <%= f.text_field :title , class: 'col-md-3 col-form-label', placeholder: 'タイトルを入力してください' %>
+   <div class="form-row pt-3">
+    <div class="form-group col-md-3">
+     <%= f.text_field :title , class: 'form-control custom-form-control', placeholder: 'タイトルを入力してください' %>
+    </div>
    </div>
-   <div class="row pt-3">
-     <%= f.attachment_field :post_images_images, multiple: true, class: 'col-md-3 col-form-label' %>
+   <div class="form-row pt-3">
+    <div class="form-group col-md-3">
+     <%= f.attachment_field :post_images_images, multiple: true %>
+    </div>
    </div>
-   <div class="row pt-3">
-     <%= f.text_area :body , class: 'col-md-3 col-form-label' %>
+   <div class="form-row pt-3">
+    <div class="form-group col-md-3">
+     <%= f.text_area :body , class: 'form-control custom-form-control' %>
+    </div>
    </div>
-   <div class="actions form-group pt-4 ml-5">
-     <%= f.submit '投稿' , class:'col-md-2 btn btn-outline-dark' %>
+   <div class="form-row pt-3">
+    <div class="form-group col-md-3">
+      <%= f.submit '投稿' , class: 'form-control custom-form-control' %>
+    </div>
    </div>
   <% end %>
 </div>

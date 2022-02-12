@@ -5,27 +5,31 @@
   <%= form_with model: @user, url: user_registration_path, local: true do |f| %>
    <%= render "devise/shared/error_messages", resource: resource %>
 
-   <div class="form-group row pt-4">
+   <div class="form-group row pt-3">
     <%= f.label 'name', class: 'col-md-3 col-form-label' %><br>
-    <%= f.text_field :name, class:'col-md-3 form-control', placeholder: 'たま'  %>
+    <%= f.text_field :name, class:'col-md-3 form-control custom-form-control', placeholder: 'たま'  %>
    </div>
 
    <div class="form-group row pt-3">
     <%= f.label 'email', class: 'col-md-3 col-form-label' %><br>
-    <%= f.email_field :email, autofocus: true, autocomplete: "email", class:'col-md-3 form-control', placeholder: 'sample@sample.com'  %>
+    <%= f.email_field :email, autofocus: true, autocomplete: "email", class:'col-md-3 form-control custom-form-control', placeholder: 'sample@sample.com'  %>
    </div>
 
    <div class="form-group row pt-3">
     <%= f.label 'password', class: 'col-md-3 col-form-label' %>
-    <%= f.password_field :password, autocomplete: "new-password", class:'col-md-3 form-control' %>
+    <%= f.password_field :password, autocomplete: "new-password", class:'col-md-3 form-control custom-form-control' %>
    </div>
 
    <div class="form-group row pt-3">
     <%= f.label 'password(確認用)', class: 'col-md-3 col-form-label' %><br>
-    <%= f.password_field :password_confirmation, autocomplete: "new-password", class:'col-md-3 form-control' %>
+    <%= f.password_field :password_confirmation, autocomplete: "new-password", class:'col-md-3 form-control custom-form-control' %>
    </div>
 
-   <div class="actions form-group mt-5">
+   <div class="form-group row pt-4 pl-4">
+    <p>※名前は変更できません、ご注意ください。</p>
+   </div>
+
+   <div class="actions form-group mt-3">
     <%= f.submit "新規登録", class:'col-md-4 btn btn-outline-dark mr-3' %>
     <%= link_to "ログイン" , user_session_path , class:'btn btn-outline-secondary'  %>
   <% end %>

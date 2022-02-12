@@ -6,13 +6,12 @@ class PostsController < ApplicationController
 
   def create
     @post = Post.new(post_params)
-    # binding.pry
-    # ログイン中のユーザー情報を参照するため記述
-    @post.user_id = current_user.id
-
-    @post.save
-    # binding.pry
-    redirect_to post_path(@post.id)
+    @post.user = current_user
+    if @post.save
+      redirect_to post_path(@post.id)
+    else
+      render :new
+    end
   end
 
   def index

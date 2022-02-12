@@ -1,11 +1,23 @@
-<h1>編集画面</h1>
-<!-- form_with部分 -->
-<%= form_with model:@post, local: true do |f| %>
-  <h4>タイトル</h4>
-  <%= f.text_field :title %>
-  <!--<h4>カテゴリー</h4>-->
-  <!--<%#= f.text_field :category %>-->
-  <h4>本文</h4>
-  <%= f.text_area :body %>
-  <%= f.submit '保存' %>
-<% end %>
+<div class="container">
+  <div class="row border-bottom mt-5">
+   <strong class="mb-3">ぽすとの編集</strong>
+  </div>
+  <%= form_with model:@post, local: true do |f| %>
+   <div class="form-row pt-3">
+    <div class="form-group col-md-3">
+     <%= f.text_field :title , class: 'form-control custom-form-control', placeholder: 'タイトルを入力してください' %>
+    </div>
+   </div>
+   <div class="form-row pt-3">
+    <div class="form-group col-md-3">
+     <%= f.text_area :body , class: 'form-control custom-form-control' %>
+    </div>
+   </div>
+   <div class="form-row pt-3">
+    <div class="form-group col-md-3">
+      <%= f.submit '保存' , class: 'form-control custom-form-control' %>
+    </div>
+   </div>
+  <% end %>
+</div>
+
