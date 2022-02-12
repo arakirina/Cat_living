@@ -1,19 +1,21 @@
-<div class="container m-5">
-  <h5 class='row mt-4 ml-5'><i class="bi bi-check mr-2"></i>パスワードを変更する</h5><br>
+<div class="container">
+  <div class="row border-bottom mt-5">
+   <p><i class="bi bi-check ml-4 pr-2"></i>変更案内メールの送信</p>
+  </div>
 
   <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
    <%= render "devise/shared/error_messages", resource: resource %>
 
-   <div class="form-group row">
-     <%= f.label 'email', class: 'col-md-3 col-form-label' %><br>
-     <%= f.email_field :email, autofocus: true, autocomplete: "email", class:'col-md-3 form-control', placeholder: 'sample@sample.com'  %>
+   <div class="form-group row pt-5">
+    <%= f.label 'email', class: 'col-md-3 col-form-label' %><br>
+    <%= f.email_field :email, autofocus: true, autocomplete: "email", class:'col-md-3 form-control', placeholder: 'sample@sample.com'  %>
    </div>
 
    <div class="actions form-group mt-5">
-     <%= f.submit "メールを送信", class:'col-md-4 btn btn-outline-dark mr-3' %>
-     <%= link_to "ログイン" , user_session_path , class:'btn-light'  %>｜
-     <%= link_to "新規登録" , new_user_registration_path , class:'btn-light'  %>
+    <%= f.submit "メールを送信", class:'col-md-4 btn btn-outline-dark mr-3' %>
+    <%= link_to "ログイン" , user_session_path , class:'btn-light'  %>｜
+    <%= link_to "新規登録" , new_user_registration_path , class:'btn-light'  %>
    </div>
-  <% end %>
 
+  <% end %>
 </div>

@@ -1,5 +1,10 @@
-<h1>ねこぽすと</h1>
-<% @posts.each do |post| %>
-  <p></p>
-  <span><%= post.title %></span>
-<% end %>
+<div class="container">
+  <div class="row border-bottom mt-5">
+   <strong class="mb-3">ねこぽすと</strong>
+  </div>
+  <% @posts.each do |post| %>
+  <div class="row pt-4">
+   <span><i class="fa fa-chevron-right"><%= link_to post.title, post_path(post.id) , class:"text-dark ml-3" %></i></span>
+  </div>
+  <% end %>
+</div>
