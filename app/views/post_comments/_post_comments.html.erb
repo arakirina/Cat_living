@@ -1,0 +1,25 @@
+<div class="row mt-5">
+ <table class="table">
+  <tbody>
+   <div id = "comment_area">
+    <% post.post_comments.each do |post_comment| %>
+      <tr>
+       <td>
+        <strong><i class="bi bi-person pr-2 font-weight-bold"></i><%= post_comment.user.name %></strong>
+        <br>
+        <%= post_comment.created_at.strftime('%Y/%m/%d') %>
+       </td>
+       <td>
+        <strong><%= post_comment.comment %></strong>
+       </td>
+       <td>
+        <% if post_comment.user == current_user %>
+         <%= link_to "削除", post_post_comment_path(post_comment.post, post_comment), method: :delete , remote: true , "data-confirm" => "本当に消しますか？" , class:"btn btn-dark btn" %>
+        <% end %>
+       </td>
+      </tr>
+    <% end %>
+   </div>
+  </tbody>
+ </table>
+</div>

@@ -10,7 +10,7 @@
    </strong>
   </div>
   <% @posts.each do |post| %>
-   <div class="row pt-3">
+   <div class="row mt-4">
     <span><i class="fa fa-chevron-right"><%= link_to post.title , post_path(post.id) , class:"text-dark ml-3"%></i></span>
    </div>
   <% end %>

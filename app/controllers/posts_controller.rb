@@ -2,6 +2,7 @@ class PostsController < ApplicationController
 
   def new
     @post = Post.new
+    @category = Category.all.map{ |category| [category.name, category.id,] } 
   end
 
   def create
@@ -15,11 +16,17 @@ class PostsController < ApplicationController
   end
 
   def index
-    @posts = Post.all
+    if params[:category_id].present?
+     @category = Category.find(params[:category_id])
+     @posts = Post.where(category_id: params[:category_id]).page(params[:page]).reverse_order
+    else
+     @posts = Post.page(params[:page]).reverse_order
+    end
   end
 
   def show
     @post = Post.find(params[:id])
+    @post_comment = PostComment.new
   end
 
   def edit

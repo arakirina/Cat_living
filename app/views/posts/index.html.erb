@@ -1,6 +1,10 @@
 <div class="container">
   <div class="row border-bottom mt-5">
-   <strong class="mb-3">ねこぽすと</strong>
+   <% if @category.present? %>
+    <strong class="mb-3"><%= @category.name %></strong>
+   <% else %>
+    <strong class="mb-3">ねこぽすと</strong>
+   <% end %>
   </div>
   <% @posts.each do |post| %>
    <div class="row mt-4">
@@ -8,4 +12,7 @@
     <p>by <%= link_to post.user.name, user_path(post.user) , class:"text-dark" %></p>
    </div>
   <% end %>
+  <div class="pagenate text-dark">
+   <%= paginate @posts %>
+  </div>
 </div>

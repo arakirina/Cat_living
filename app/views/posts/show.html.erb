@@ -18,10 +18,24 @@
    <% if @post.user_id == current_user.id %>
     <%= link_to "編集" , edit_post_path , class:"btn btn-outline-dark mr-3" %>
     <%= link_to "削除",post_path(@post), method: :delete , "data-confirm" => "本当に消しますか？" , class:"btn btn-dark" %>
-   <% else %>
-    <p>いいね</p>
-    <p>コメント</p>
    <% end %>
+    <div class="row ml-3">
+     <%= render 'favorites/favorite', post: @post %>
+     <p class="ml-3"><i class="bi bi-chat mr-2"></i><%= @post.post_comments.count %></p>
+    </div>
+  </div>
+  <div id="comment_area">
+   <%= render "post_comments/post_comments", post: @post %>
+  </div>
+  <div class="row ml-1 mt-4">
+    <%= form_with(model:[@post,@post_comment], remote: true) do |f| %>
+     <div class="form-group row">
+      <%= f.text_area :comment, rows:'2',placeholder: "コメントを入力" , class:"form-control custom-form-control" %>
+     </div>
+     <div class="form-group row">
+      <%= f.submit "送信" , class:"btn btn-outline-dark btn-sm" %>
+     </div>
+    <% end %>
   </div>
 </div>
 
