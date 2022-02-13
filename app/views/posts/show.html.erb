@@ -1,6 +1,14 @@
 <div class="container">
-  <div class="row border-bottom mt-5">
-   <strong class="mb-3"><%= @post.title %></strong>
+  <div class="row border-bottom mt-5 bd-highlight">
+    <div class="me-auto p-2 bd-highlight mr-5">
+     <strong><%= @post.title %></strong>
+    </div>
+    <div class="p-2 bd-highlight ml-5">
+    <% if @category.present? %>
+     <i class="bi bi-stars p-2"></i>カテゴリ：<%= @category.name %>
+    <% else %>
+    <% end %>
+    </div>
   </div>
   <div class="row mt-5 image-post">
    <% if @post.post_images.present? %>

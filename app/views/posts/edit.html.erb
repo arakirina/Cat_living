@@ -8,6 +8,11 @@
      <%= f.text_field :title , class: 'form-control custom-form-control', placeholder: 'タイトルを入力してください' %>
     </div>
    </div>
+   <div class="form-row pt-2 ml-1 mb-1">
+    <div class="form-group">
+     <%= f.select :category_id, @category , { include_blank: '選択してください'}, { class: 'form-control custom-form-control' , required: true } %>
+    </div>
+   </div>
    <div class="form-row pt-3">
     <div class="form-group col-md-3">
      <%= f.text_area :body , rows:'10', class: 'form-control custom-form-control' %>

@@ -2,7 +2,7 @@ class PostsController < ApplicationController
 
   def new
     @post = Post.new
-    @category = Category.all.map{ |category| [category.name, category.id,] } 
+    @category = Category.all.map{ |category| [category.name, category.id,] }
   end
 
   def create
@@ -19,6 +19,7 @@ class PostsController < ApplicationController
     if params[:category_id].present?
      @category = Category.find(params[:category_id])
      @posts = Post.where(category_id: params[:category_id]).page(params[:page]).reverse_order
+     pp @posts
     else
      @posts = Post.page(params[:page]).reverse_order
     end
@@ -27,10 +28,12 @@ class PostsController < ApplicationController
   def show
     @post = Post.find(params[:id])
     @post_comment = PostComment.new
+    @category = Category.find(@post.category_id)
   end
 
   def edit
     @post = Post.find(params[:id])
+    @category = Category.all.map{ |category| [category.name, category.id,] }
   end
 
   def update
@@ -48,7 +51,7 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:title,:body, post_images_images: [])
+    params.require(:post).permit(:title,:body,:category_id, post_images_images: [])
   end
 
 end
