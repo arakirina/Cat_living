@@ -16,7 +16,6 @@
   <body>
 
     <header class="sticky-top">
-
       <nav class="navbar navbar-expand-lg navbar-light shadow-sm p-2 mb-3 bg-white rounded p-20">
         <div class="container">
           <a class="logo" href="/"><%= image_tag 'top-image.jpeg', size: '200x80' %></a>
@@ -40,13 +39,12 @@
           </div>
         </div>
       </nav>
-
     </header>
 
     <%= yield %>
 
-    <footer class="sticky-bottom">
-      
+    <footer class="fixed-bottom">
+      <small class="copy-right pr-5 pt-3">© 2021 Cat_living inc.️</small>
     </footer>
 
   </body>
