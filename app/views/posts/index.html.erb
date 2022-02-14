@@ -1,15 +1,23 @@
 <div class="container">
   <div class="row border-bottom mt-5">
    <% if @category.present? %>
-    <strong class="mb-3"><%= @category.name %></strong>
+    <strong class="mb-3">
+     <i class="bi bi-stars p-2"></i><%= @category.name %>
+    </strong>
    <% else %>
     <strong class="mb-3">ねこぽすと</strong>
    <% end %>
   </div>
   <% @posts.each do |post| %>
    <div class="row mt-4">
-    <span><i class="fa fa-chevron-right"><%= link_to post.title, post_path(post.id) , class:"text-dark ml-3 mr-5" %></i></span>
-    <p>by <%= link_to post.user.name, user_path(post.user) , class:"text-dark" %></p>
+    <table class="container">
+     <tbody>
+      <tr>
+       <td class="col-md-6"><i class="fa fa-chevron-right"><%= link_to post.title, post_path(post.id) , class:"text-dark ml-3 mr-5" %></i></td>
+       <td class="col-md-3">by <%= link_to post.user.name, user_path(post.user) , class:"text-dark" %></td>
+      </tr>
+     </tbody>
+    </table>
    </div>
   <% end %>
   <div class="pagenate text-dark">
