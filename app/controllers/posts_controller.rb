@@ -28,7 +28,9 @@ class PostsController < ApplicationController
   def show
     @post = Post.find(params[:id])
     @post_comment = PostComment.new
-    @category = Category.find(@post.category_id)
+    if @post.category_id.present?
+     @category = Category.find(@post.category_id)
+    end
   end
 
   def edit
