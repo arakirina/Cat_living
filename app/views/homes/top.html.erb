@@ -14,9 +14,9 @@
        <ul class="border-bottom pb-3 pt-1">
         <li class="list-unstyled">
          <i class="bi bi-chevron-right"></i>
+         <%#postのindexにカテゴリのIDを渡している。%>
          <%= link_to category.name, posts_path(:category_id => category.id), class:"text-dark" %>
         </li>
-        <%#postのindexにカテゴリのIDを渡している。このやり方だとソースに出ない検証ツールにでない%>
        </ul>
       <% end %>
      </div>
