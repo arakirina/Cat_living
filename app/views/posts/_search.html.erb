@@ -1,0 +1,15 @@
+  <div class="searchposts mt-4 mt-4">
+   <%= form_with url: search_posts_path, method: :get, local: true do |f| %>
+     <%= f.text_field :name %>
+     <%= f.submit :search %>
+   <% end %>
+   <table>
+     <tbody>
+       <% @searchposts.each do |post| %>
+        <tr>
+          <td><%= post.title %></td>
+        </tr>
+       <% end %>
+     </tbody>
+   </table>
+  </div>

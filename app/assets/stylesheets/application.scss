@@ -34,3 +34,33 @@
 main{
  padding-bottom: 120px;
 }
+
+.pagination{
+ padding-top: 50px;
+}
+
+.paginate>li>a{
+ border: none;
+ color: #696969;
+}
+
+.pagination>.active>a{
+ background-color: #dcdcdc;
+}
+
+.page-item.active .page-link {
+ z-index: 3;
+ color: #696969;
+ background-color: #f5f5f5;
+ border-color: #696969;
+}
+
+.page-link{
+ color: #696969;
+ background-color: #fff;
+ border: 1px solid #dee2e6;
+}
+
+.page-link:hover{
+ color: black;
+}

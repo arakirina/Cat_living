@@ -50,6 +50,15 @@ class PostsController < ApplicationController
     redirect_to posts_path
   end
 
+# indexにそのまま入れる？
+  def search
+    if params[:body].present?
+      @searchposts = Post.where('post LIKE ?', "%#{params[:body]}%")
+    else
+      @searchposts = Post.none
+    end
+  end
+
   private
 
   def post_params
