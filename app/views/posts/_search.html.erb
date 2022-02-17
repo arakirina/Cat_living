@@ -3,13 +3,4 @@
      <%= f.text_field :name %>
      <%= f.submit :search %>
    <% end %>
-   <table>
-     <tbody>
-       <% @searchposts.each do |post| %>
-        <tr>
-          <td><%= post.title %></td>
-        </tr>
-       <% end %>
-     </tbody>
-   </table>
   </div>
