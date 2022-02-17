@@ -1,8 +1,6 @@
 <div class="container">
   <div class="row border-bottom mt-5">
 
-   <%= render "posts/search" %>
-
    <% if @category.present? %>
     <strong class="mb-3">
      <i class="bi bi-stars p-2"></i><%= @category.name %>
@@ -12,6 +10,9 @@
    <% end %>
   </div>
 
+  <div class="search-form mt-3 mb-5">
+   <%= render "posts/search" %>
+  </div>
   <% @posts.each do |post| %>
    <div class="row mt-4">
     <table class="container">
