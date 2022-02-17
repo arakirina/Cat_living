@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   get '/about' => 'homes#about'
 
   resources :categories,only: [:index]
-  resources :users, only: [:show ,:edit]
+  resources :users, only: [:show ,:edit, :update]
   resources :posts do
     resource :favorites, only:[:create, :destroy]
     resources :post_comments, only: [:create, :destroy]

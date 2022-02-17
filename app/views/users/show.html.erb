@@ -4,8 +4,13 @@
     <%= @user.name %>
     <% if user_signed_in? && @user == current_user %>
      のマイページ
+     <span class="edit-user pl-3">
+      <%= link_to  edit_user_path(@user), class: 'text-dark' do %>
+       <i class="bi bi-gear"></i>
+      <% end %>
+     </span>
     <% else %>
-     のユーザーページ
+     のページ
     <% end %>
    </strong>
   </div>

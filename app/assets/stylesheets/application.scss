@@ -33,6 +33,7 @@
 
 main{
  padding-bottom: 120px;
+ position: relative;
 }
 
 .pagination{
@@ -63,4 +64,19 @@ main{
 
 .page-link:hover{
  color: black;
+}
+
+.field_with_errors {
+  display: contents;
+}
+
+input:-webkit-autofill {
+    transition: background-color 5000s ease-in-out 0s !important;
+}
+
+.footer-list{
+ position: absolute;
+ bottom: 30px;
+ left: 25px;
+ list-style: none;
 }
