@@ -27,6 +27,15 @@
  box-shadow: 0 0 0 0.2em rgba(163,163,163,0.4);
 }
 
+.custom-form-control-2:focus{
+ border-color: black;
+ box-shadow: 0 0 0 0.2em rgba(163,163,163,0.4);
+}
+
+.custom-form-control-2{
+ border: 1px solid #343a40;
+}
+
 .fixed-bottom{
  background-color: #fff;
 }
