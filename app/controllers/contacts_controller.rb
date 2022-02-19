@@ -1,22 +1,22 @@
 class ContactsController < ApplicationController
-  
+
   def new
     @contact = Contact.new
   end
-  
+
   def confirm
     @contact = Contact.new(contact_params)
     if @contact.invalid?
       render:new
     end
   end
-  
+
   def back
     @contact = Contact.new(contact_params)
     render:new
   end
   # 入力内容に誤りがあった場合、入力内容を保持したまま前のページに戻ってくれる:back
-  
+
   def create
     @contact = Contact.new(contact_params)
     if @contact.save
@@ -26,16 +26,16 @@ class ContactsController < ApplicationController
       render:new
     end
   end
-  
+
   def done
   end
   # 送信完了画面のための記述
-  
+
   private
-  
+
   def contact_params
     params.require(:contact)
           .permit(:email, :name, :message)
   end
-  
+
 end
