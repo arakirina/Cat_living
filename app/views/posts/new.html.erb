@@ -12,12 +12,12 @@
   <%= form_with model: @post, local:true do |f| %>
    <div class="form-row pt-3">
     <div class="form-group col-md-3">
-     <%= f.text_field :title , class: 'form-control custom-form-control', placeholder: 'タイトルを入力してください' %>
+     <%= f.text_field :title , class: 'form-control custom-form-control', placeholder: 'タイトルを入力' %>
     </div>
    </div>
    <div class="form-row pt-2 ml-1 mb-1">
     <div class="form-group">
-     <%= f.select :category_id, @category , { include_blank: '選択してください'}, { class: 'form-control custom-form-control' , required: true } %>
+     <%= f.select :category_id, @category , { include_blank: 'カテゴリを選択'}, { class: 'form-control custom-form-control' , required: true } %>
     </div>
    </div>
    <div class="form-row pt-2">
