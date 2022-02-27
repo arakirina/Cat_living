@@ -1,5 +1,8 @@
 class PostsController < ApplicationController
 
+before_action :authenticate_user!
+before_action :correct_post,only: [:edit,:update]
+
   def new
     @post = Post.new
     @category = Category.all.map{ |category| [category.name, category.id,] }
@@ -42,6 +45,13 @@ class PostsController < ApplicationController
     post = Post.find(params[:id])
     post.update(post_params)
     redirect_to post_path(post)
+  end
+  
+  def correct_post
+    @post = Post.find(params[:id])
+   unless @post.user.id == current_user.id
+    redirect_to posts_path
+   end
   end
 
   def destroy
