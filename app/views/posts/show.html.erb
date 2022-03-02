@@ -8,6 +8,9 @@
      <i class="bi bi-stars p-2"></i>カテゴリ：<%= @category.name %>
     <% else %>
     <% end %>
+    <span class="sentiment-score pl-5">
+     <i class="bi bi-stars p-2"></i>感情分析スコア：<%= @post.score %>
+    </span>
     </div>
   </div>
   <div class="row mt-5 image-post">

@@ -10,6 +10,7 @@ before_action :correct_post,only: [:edit,:update]
 
   def create
     @post = Post.new(post_params)
+    @post.score = Language.get_data(post_params[:body])
     @post.user = current_user
     if @post.save
       redirect_to post_path(@post.id)
