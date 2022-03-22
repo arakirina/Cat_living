@@ -82,3 +82,6 @@ gem 'kaminari','~> 1.2.1'
 gem 'rubocop', require:false
 gem 'rubocop-rails', require:false
 gem 'rubocop-performance', require:false
+
+gem 'rails-i18n', '~> 5.1'
+gem 'devise-i18n'

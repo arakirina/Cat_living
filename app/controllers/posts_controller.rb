@@ -15,6 +15,7 @@ before_action :correct_post,only: [:edit,:update]
     if @post.save
       redirect_to post_path(@post.id)
     else
+      @category = Category.all.map{ |category| [category.name, category.id,] }
       render :new
     end
   end
@@ -47,7 +48,7 @@ before_action :correct_post,only: [:edit,:update]
     post.update(post_params)
     redirect_to post_path(post)
   end
-  
+
   def correct_post
     @post = Post.find(params[:id])
    unless @post.user.id == current_user.id

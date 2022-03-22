@@ -3,7 +3,9 @@
    <p><i class="bi bi-person-fill ml-4 pr-2"></i>新規登録</p>
   </div>
   <%= form_with model: @user, url: user_registration_path, local: true do |f| %>
+  <div class="error-message mt-5 mb-4">
    <%= render "devise/shared/error_messages", resource: resource %>
+  </div>
 
    <div class="form-group row pt-3">
     <%= f.label 'name', class: 'col-md-3 col-form-label' %><br>
